@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Translation Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Original Sentence:</h2>
+        <p>{{ input_text }}</p>
+
+        <h2>Translated Sentence:</h2>
+        <p id="translated">{{ translated_text }}</p>
+
+        <h2>Sentiment: {{ sentiment }} {{ emoji }}</h2>
+
+        <button onclick="copyText()">📋 Copy</button>
+        <a href="/" class="back">🔙 Back</a>
+    </div>
+
+    <script>
+        function copyText() {
+            navigator.clipboard.writeText(document.getElementById("translated").innerText);
+            alert("Translation copied to clipboard!");
+        }
+    </script>
+</body>
+</html>
