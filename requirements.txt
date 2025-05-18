@@ -3,3 +3,4 @@ transformers
 nltk
 torch
 gunicorn
+pandas
